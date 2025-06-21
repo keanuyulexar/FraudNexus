@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit Transaction - FraudNexus</title>
+</head>
+<body>
+<h1>Submit a Transaction</h1>
+<form th:action="@{/submit}" th:object="${transactionRequest}" method="post">
+  <label>Customer ID:</label>
+  <input type="Number" th:field="*{customerId" required/><br/><br/>
+
+  <label>Amount:</label>
+  <input type="number" step="0.01" th:field="*{amount}" required/><br/><br/>
+
+  <label>Description:</label>
+  <input type="text" th:field="*{description}" /><br/><br/>
+
+  <button type="submit">Submit Transaction</button>
+</form>
+
+</body>
+</html>
